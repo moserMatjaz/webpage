@@ -1,0 +1,25 @@
+{% extends "base.html"%}
+{% load crispy_forms_tags %}
+
+{% block head_title %} Subscribe | {% endblock %}
+
+{% block sign_up_form %}
+		<div class="container">
+			<div class="jumbotron">
+				<div class="row">
+		    		<div class="col-sm-6 col-md-4 col-sm-offset-4 text-align-center">
+		    			<h2>{{ title }}</h2>
+		    			<p>{{ description }}</p>
+		    			<form method = "POST", action="">
+							{% csrf_token %}	
+							<table>
+								{{ form|crispy }}
+							</table>
+
+							<input class = "btn btn-primary center-block", type="submit" name="SUBMIT" value="SIGN UP">
+						</form>
+		    		</div>
+				</div>	
+			</div>
+		</div>		
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends "base.html"%}
+
+{% block head_title %} About | {% endblock %}
+
+{% block about_content %}
+
+{% load static %}
+	<div class="jumbotron">
+		<div class = "container">
+			<h1>About Us:</h1>
+
+			<p>This example is a quick exercise to illustrate how the default, static navbar and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
+
+			<p>This example is a quick exercise to illustrate how the default, static navbar and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
+
+			<p>This example is a quick exercise to illustrate how the default, static navbar and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
+
+			<p>This example is a quick exercise to illustrate how the default, static navbar and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
+
+		</div>
+	</div>
+
+<!-- SUPER USER CONTENT -->
+	{% if request.user.is_authenticated %}
+		{% if request.user.is_staff %}
+			<div class="jumbotron">
+				<div class = "container table-responsive">
+					<h1 class="text-align-center">People subscribed:</h1>
+						<table class="table text-align-center table-hover">
+						<tr class="text-bold info">
+							<td></td>
+							<td>NAME</td>
+					    	<td>LAST NAME</td>
+					    	<td>EMAIL</td>
+					    	<td>CREATED</td>
+						</tr>
+							{% for item in dataSet %}		
+							    <tr class="success">
+							    	<td class="danger">{{ forloop.counter }}</td>
+							    	<td>{{ item.name }}</td>
+							    	<td>{{ item.lastName }}</td>
+							    	<td>{{ item.email }}</td>
+							    	<td>{{ item.timestamp }}</td>	
+							    </tr>
+							{% endfor %}
+						</table>
+				</div>
+			</div>
+
+			<div class="jumbotron">
+				<div class = "container text-align-center">
+					<h1>Visualised results: </h1>
+					<svg width="960" height="600"></svg>
+					<script src="http://d3js.org/d3.v2.min.js?2.9.6"></script>
+					<script type="text/javascript" src = "{% static 'js/visualisationSample.js' %}"></script>
+				</div>
+			</div>
+
+		{% endif %}
+	{% endif %}
+
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "base.html"%}
+{% load crispy_forms_tags %}
+
+{% block head_title %} Contact | {% endblock %}
+
+{% block contact_form %}
+		
+		<div class="jumbotron">
+			<div class="container">
+				<div class="row">
+		    		<div class="col-sm-12 col-md-12">
+		    			<h2 class="text-align-center">Send us a message and we will try to respond</h2>
+		    			<form method = "POST", action="">
+							{% csrf_token %}
+							<table>
+								{{ form|crispy }}
+							</table>
+							<input class = "btn btn-primary center-block", type="submit" value="SEND MESSAGE">
+						</form>	
+		    		</div>
+				</div>	
+			</div>
+		</div>	
+{% endblock %}

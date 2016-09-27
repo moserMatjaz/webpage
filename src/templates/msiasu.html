@@ -1,0 +1,28 @@
+{% extends "base.html"%}
+
+{% block head_title %} MSIASU 2.0 | {% endblock %}
+
+{% load static %}
+
+{% block about_content %}
+
+	<div class="jumbotron text-align-center">
+		<div class = "container  text-align-center">
+			<h1>Visualised results: </h1>
+			    <div id="map" width="960" height="600">
+	                <div id="inside_container">
+	                    <div id="inside_map"></div>
+	                    <div id="inside_map_lower"></div>
+	                </div>
+
+	                <script src="{% static 'js/d3.v3.min.js' %}"></script> 
+	                <script src="{% static 'js/topojson.v1.min.js' %}"></script> 
+	                <script src="{% static 'js/queue.v1.min.js' %}"></script> 
+	                <script src="{% static 'js/jquery-1.11.1.min.js' %}"></script> 
+	                <script src="{% static 'js/visualisation.js' %}"></script>
+            	</div>
+
+		</div>
+	</div>
+
+{% endblock %}

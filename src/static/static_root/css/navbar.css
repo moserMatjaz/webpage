@@ -1,0 +1,65 @@
+.text-align-center {
+  text-align: center;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+
+.navbar {
+  margin-bottom: 0px !important; 
+}
+
+.tab-items {
+    margin-top:15px !important;
+}
+
+.content-block {
+  height: 200px !important;
+  border-color: black !important;
+  border-width: 10px !important;
+  border-style: solid;
+}
+
+.node {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+.link {
+  stroke: #999;
+  stroke-opacity: .6;
+}
+
+svg {
+  border-color: black;
+  border-width: 2px;
+  border-style: solid;
+  background-color: white;
+}
+
+.my-logo {
+  padding: 0px;
+  margin: 0px;
+  margin-right: 5px;
+  padding-left: 10px;
+}
+
+#map {
+  border-color: black;
+  border-width: 2px;
+  border-style: solid;
+  background-color: white;
+  width: 960px;
+  height: 960px;
+}

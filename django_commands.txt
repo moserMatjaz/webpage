@@ -1,0 +1,4 @@
+start virtual env:
+C:\Python34\Scriptsvirtualenv <name>
+
+	

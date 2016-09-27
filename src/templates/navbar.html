@@ -1,0 +1,48 @@
+      <!-- Static navbar -->
+      {% load static %}
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand my-logo" href="{% url 'home' %}"><i class="fa fa-area-chart fa-4x" aria-hidden="true"></i></a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav tab-items">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="http://bananasandpies.herokuapp.com/" target="_blank">MSIASU 1.0</a></li>
+                  <li><a href="{% url 'msiasu' %}" target="_blank">MSIASU 2.0</a></li>
+                </ul>
+              </li>
+              <li><a href="{% url 'aboutUs' %}">About</a></li>
+              <li><a href="{% url 'aboutUs' %}">Something</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href=""><i class="fa fa-facebook fa-4x" aria-hidden="true"></i></a></li>
+              <li><a href=""><i class="fa fa-linkedin fa-4x" aria-hidden="true"></i></a></li>
+              <li><a href=""><i class="fa fa-github fa-4x" aria-hidden="true"></i></a></li>
+              <li><a href="{% url 'contact' %}"><i class="fa fa-envelope fa-4x" aria-hidden="true"></i></a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right tab-items">
+              {% if request.user.is_authenticated %}
+                <li><a href="/accounts/profile/">My profile</a></li>
+                <li><a href="{% url 'auth_logout' %}" class = "text-bold">Log out: {{ request.user }}</a></li>
+              {% else %}
+                <li><a href="{% url 'auth_login' %}">Login</a></li>
+                <li><a href="{% url 'registration_register' %}">Register</a></li>
+
+              {% endif %}
+              <li><a href="{% url 'signUp' %}">Sign Up</a></li>
+              <li><a href="{% url 'signUp' %}">Newsletter</a></li>
+              <li><a href="">Blog</a></li>
+            </ul>
+
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
